@@ -1,0 +1,36 @@
+make -f nbproject/Makefile-Config_2.mk SUBPROJECTS= .clean-conf
+make[1]: Entering directory 'D:/lcd.X'
+rm -f  -r .ca/build/Config_2/production
+rm -f  -r .ca/dist/Config_2/production
+make[1]: Leaving directory 'D:/lcd.X'
+[32mCLEAN SUCCESSFUL (total time: 155ms)[0m
+make -f nbproject/Makefile-Config_2.mk SUBPROJECTS= .build-conf
+make[1]: Entering directory 'D:/lcd.X'
+make  -f nbproject/Makefile-Config_2.mk .ca/dist/Config_2/production/lcd.X.production.hex
+make[2]: Entering directory 'D:/lcd.X'
+"C:\Program Files\Microchip\xc8\v2.45\bin\xc8-cc.exe"  -mcpu=16F676 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8"  -fno-short-double -fno-short-float -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_2=Config_2  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_2/production/newmain.p1 newmain.c 
+"C:\Program Files\Microchip\xc8\v2.45\bin\xc8-cc.exe"  -mcpu=16F676 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8"  -fno-short-double -fno-short-float -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_2=Config_2  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_2/production/lcd.p1 lcd.c 
+::: advisory: (2100) using the C99 standard library with the selected device may result in larger code and data usage
+::: advisory: (2100) using the C99 standard library with the selected device may result in larger code and data usage
+newmain.c:37:27: warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    return ((ADRESH << 8) | ADRESL); // Return 10-bit ADC result
+    ~~~~~~  ~~~~~~~~~~~~~~^~~~~~~~
+1 warning generated.
+lcd.c:82:17: warning: implicit conversion loses integer precision: 'short' to 'unsigned char' [-Wconversion]
+    LCD_Command(position);   // Set cursor position
+    ~~~~~~~~~~~ ^~~~~~~~
+1 warning generated.
+"C:\Program Files\Microchip\xc8\v2.45\bin\xc8-cc.exe"  -mcpu=16F676 -Wl,-Map=.ca/dist/Config_2/production/lcd.X.production.map  -DXPRJ_Config_2=Config_2  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8"  -fno-short-double -fno-short-float -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto      -Wl,--memorysummary,.ca/dist/Config_2/production/memoryfile.xml -o .ca/dist/Config_2/production/lcd.X.production.elf  .ca/build/Config_2/production/newmain.p1 .ca/build/Config_2/production/lcd.p1     
+::: advisory: (2100) using the C99 standard library with the selected device may result in larger code and data usage
+[31mmake[2]: *** [.ca/dist/Config_2/production/lcd.X.production.hex] Error 1[0m
+newmain.c:45:: warning: (1518) direct function call made with an incomplete prototype (LCD_Init)
+C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\doprnt.c:185:: error: (1250) could not find space (32 bytes) for variable _dbuf
+(908) exit status = 1
+nbproject/Makefile-Config_2.mk:148: recipe for target '.ca/dist/Config_2/production/lcd.X.production.hex' failed
+make[2]: Leaving directory 'D:/lcd.X'
+nbproject/Makefile-Config_2.mk:85: recipe for target '.build-conf' failed
+make[1]: Leaving directory 'D:/lcd.X'
+nbproject/Makefile-impl.mk:39: recipe for target '.build-impl' failed
+[31mmake[1]: *** [.build-conf] Error 2
+make: *** [.build-impl] Error 2[0m
+[31mBUILD FAILED (exit value 2, total time: 2s)[0m
